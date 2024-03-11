@@ -1,0 +1,23 @@
+﻿@model LoginVM
+<form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="mb-3">
+        <label asp-for="Email" class="form-label"></label>
+        <input type="email" class="form-control" asp-for="Email" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <span asp-validation-for="Email"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="PassWord" class="form-label"></label>
+        <input type="password" asp-for="PassWord" class="form-control" id="exampleInputPassword1">
+        <span asp-validation-for="PassWord"></span>
+    </div>
+    <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" asp-for="Rememberme">
+        <label class="form-check-label" asp-for="Rememberme"></label>
+    </div>
+    <div class="mb-3 text-end">
+        <a href="#">Forgot your password</a>
+
+    </div>
+    <button type="submit" class="btn btn-primary" asp-action="Login" asp-controller="Account">Login</button>
+</form>

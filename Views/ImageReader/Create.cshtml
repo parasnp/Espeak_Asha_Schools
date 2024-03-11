@@ -1,0 +1,38 @@
+﻿@model ImgReader
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> sm
+@inject UserManager<IdentityUser> um
+
+
+
+<div class="container">
+    <h1>Add New Image</h1>
+    <form method="post" class="row" enctype="multipart/form-data">
+
+
+        <input asp-for="email" hidden value="@um.GetUserName(User)" />
+
+        <div class="form-floating p-2 col-12">
+            <input asp-for="Image" class="form-control" />
+            <label asp-for="Image"></label>
+        </div>
+        <div class="form-floating p-2 col-12">
+            <input asp-for="Text" class="form-control" />
+            <label asp-for="Text"></label>
+            <span asp-validation-for="Text" class="text-danger"></span>
+        </div>
+
+
+        <div class="row mt-2">
+            <div class="col-6 text-center">
+                <button class="btn btn1"> <i class="bi bi-plus-circle"></i> Add Image</button>
+            </div>
+            <div class="col-6 text-center">
+                <a asp-controller="ImageReader" asp-action="Index" class="btn btn2"> <i class="bi bi-x-circle"></i> Cancel</a>
+
+            </div>
+
+        </div>
+    </form>
+
+</div>

@@ -1,0 +1,23 @@
+﻿@model RegisterVM
+
+<form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" asp-for="Email">
+    </div>
+    <div class="form-group">
+        <label asp-for="password"></label>
+        <input type="password" class="form-control" placeholder="Password" asp-for="password">
+        <span asp-validation-for="password" class="text-damger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="confirmPassword">Confirm Password</label>
+        <input type="password" class="form-control" asp-for="confirmPassword" placeholder=" Password">
+        <span asp-validation-for="confirmPassword" class="text-damger"></span>
+    </div>
+    <div class="mb-3">
+        <select asp-for="SelectedRole" asp-items="@Model.RolesList"></select>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
